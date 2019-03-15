@@ -1,62 +1,90 @@
 <?php 
 $image_url = get_template_directory_uri() . '/src/img/';
 
-$image_slides = [
-    'slide1' => $image_url . 'photo-slide1',
-    'slide2' => $image_url . 'photo-slide2',
-    'slide3' => $image_url . 'photo-slide3',
-    'slide4' => $image_url . 'photo-slide4',
-    'slide5' => $image_url . 'photo-slide5',
-    'slide6' => $image_url . 'photo-slide6',
-    'slide7' => $image_url . 'photo-slide7',
-    'slide8' => $image_url . 'photo-slide8',
-    'slide9' => $image_url . 'photo-slide9',
-    'slide10' => $image_url . 'photo-slide10',
-    'slide11' => $image_url . 'photo-slide11',
-    'slide12' => $image_url . 'photo-slide12',
-    'slide13' => $image_url . 'photo-slide13',
-    'slide14' => $image_url . 'photo-slide14',
+$main_slider_slides = [
+    'slide1' => $image_url . 'slide1.jpg',
+    'slide2' => $image_url . 'slide1.jpg',
+    'slide3' => $image_url . 'slide1.jpg',
+    'slide4' => $image_url . 'slide1.jpg',
+];
+
+$bottom_slider_slides = [
+    'slide1' => $image_url . 'photo-slide1.jpg',
+    'slide2' => $image_url . 'photo-slide2.jpg',
+    'slide3' => $image_url . 'photo-slide3.jpg',
+    'slide4' => $image_url . 'photo-slide4.jpg',
+    'slide5' => $image_url . 'photo-slide5.jpg',
+    'slide6' => $image_url . 'photo-slide6.jpg',
+    'slide7' => $image_url . 'photo-slide7.jpg',
+    'slide8' => $image_url . 'photo-slide8.jpg',
+    'slide9' => $image_url . 'photo-slide9.jpg',
+    'slide10' => $image_url . 'photo-slide10.jpg',
+    'slide11' => $image_url . 'photo-slide11.jpg',
+    'slide12' => $image_url . 'photo-slide12.jpg',
+    'slide13' => $image_url . 'photo-slide13.jpg',
+    'slide14' => $image_url . 'photo-slide14.jpg',
 ];
 
 get_header(); ?>
 
 <section class="first-section-slider">
     <div class="slider-wrapper">
-        <a href="#"><img src="<?= $image_url . 'slide1.jpg'?>" alt="clothes"></a>
-        <a href="#"><img src="<?= $image_url . 'slide1.jpg'?>" alt="clothes"></a>
-        <a href="#"><img src="<?= $image_url . 'slide1.jpg'?>" alt="clothes"></a>
+
+
+    <?php
+    // check if the repeater field has rows of data
+    if( have_rows('images') ):
+
+       $link = get_category_link(the_sub_field('link'));
+        // loop through the rows of data
+        while ( have_rows('images') ) : the_row();  ?>
+
+        <?= $link; ?>
+        <a href="#"><img src="<?php the_sub_field('image'); ?>" alt="clothes"></a>
+       <?php endwhile;
+
+    else :
+
+        // no rows found
+
+    endif;
+
+    ?>
+
+
+
     </div>
 </section>
 
 <section class="products-categories">
     <div class="product-category">
-        <a href="#" class="product-category-link">
+        <a href="<?= get_category_link(61); ?>" class="product-category-link">
             <img src="<?= $image_url . 'cat1.jpg' ?>" alt="cat">
         </a>
-        <a href="#" class="product-category-bottom-link">Shop dresses</a>
+        <a href="<?= get_category_link(61); ?>" class="product-category-bottom-link">Shop dresses</a>
     </div>
     <div class="product-category">
-        <a href="#" class="product-category-link">
+        <a href="<?= get_category_link(60); ?>" class="product-category-link">
             <img src="<?= $image_url . 'cat2.jpg' ?>" alt="cat">
         </a>
-        <a href="#" class="product-category-bottom-link">Shop pants</a>
+        <a href="<?= get_category_link(60); ?>" class="product-category-bottom-link">Shop pants</a>
     </div>
     <div class="product-category">
-        <a href="#" class="product-category-link">
+        <a href="<?= get_category_link(59); ?>" class="product-category-link">
             <img src="<?= $image_url . 'cat3.jpg' ?>" alt="cat">
         </a>
-        <a href="#" class="product-category-bottom-link">Shop tops</a>
+        <a href="<?= get_category_link(59); ?>" class="product-category-bottom-link">Shop tops</a>
     </div>
     <div class="product-category">
-        <a href="#" class="product-category-link">
+        <a href="<?= get_category_link(62); ?>" class="product-category-link">
             <img src="<?= $image_url . 'cat4.jpg' ?>" alt="cat">
         </a>
-        <a href="#" class="product-category-bottom-link">Shop sweaters</a>
+        <a href="<?= get_category_link(62); ?>" class="product-category-bottom-link">Shop sweaters</a>
     </div>
 </section>
 
 <section class="shop-lookbook content-wrap">
-    <a href="#">Shop lookbook <i class="fa fa-angle-right"></i></a>
+    <a href="<?= get_category_link(54); ?>">Shop lookbook <i class="fa fa-angle-right"></i></a>
 </section>
 
 <section class="single-image-category">
@@ -82,10 +110,10 @@ get_header(); ?>
     <h3>@Ruti</h3>
 
     <div class="follow-us-slider">
-        <?php foreach($image_slides as $slide) : ?>
+        <?php foreach($bottom_slider_slides as $slide) : ?>
         <div class="follow-us-slider-item">
             <a href="#">
-                <img src="<?= $slide . '.jpg' ?>" alt="photo">
+                <img src="<?= $slide?>" alt="photo">
             </a>
         </div>
         <?php endforeach; ?>

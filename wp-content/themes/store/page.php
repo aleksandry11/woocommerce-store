@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <div class="container">
+    <div class="container content-wrap">
 		<main id="main" class="site-main" role="main">
 
 			<?php
