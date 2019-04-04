@@ -21,20 +21,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="products container columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
-	<div class="row">
-		<div class="toolbar-top-container">
-				<div class="amount-per-page">
-					<select name="" id="">
-						<option value="9">Show: 9</option>
-						<option value="18">Show: 18</option>
-						<option value="36">Show: 36</option>
-						<option value="72">Show: 72</option>
-						<option value="all">Show: All</option>						
-					</select>
-					<div class="arrow-down"></div>
-				</div>
+<div class="products container-loop columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+	<!-- <div class="toolbar-top-container">
+		<div class="amount-per-page">
+			<select name="" id="">
+				<option value="9">Show: 9</option>
+				<option value="18">Show: 18</option>
+				<option value="36">Show: 36</option>
+				<option value="72">Show: 72</option>
+				<option value="all">Show: All</option>						
+			</select>
+			<div class="arrow-down"></div>
 		</div>
-	</div>	
-<div class="row">
+	</div> -->
+
 		

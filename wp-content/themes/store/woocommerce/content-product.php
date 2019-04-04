@@ -27,7 +27,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="col-md-4 col-lg-4">
+
+<div class="product-loop-item">
 	<div <?php wc_product_class(); ?>>
 
 		<div class="product-image-wrap">
@@ -37,8 +38,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				<?php else :
 					for($i=0; $i<2; $i++): ?>
 							<img class="<?php 
-							$i == 0 ? $class = 'first-image' : $class ='second-image'; 
-							echo $class; ?>" 
+								$i == 0 ? $class = 'first-image' : $class ='second-image'; 
+								echo $class;?>" 
 							src="<?= wp_get_attachment_url($attachment_ids[$i]); ?>" 
 							alt="Product">
 					<?php endfor; 

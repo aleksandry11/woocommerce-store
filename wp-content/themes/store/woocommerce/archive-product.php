@@ -16,7 +16,6 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-
 get_header( 'shop' );
 
 /**

@@ -1,9 +1,12 @@
+<?php 
+    $image_url = get_template_directory_uri() . '/src/img/';
+?>
         </main>
-
+        
         <footer class="footer content-wrap">
             <div>
                 <div class="footer-links">
-                    <div class="footer-links-info">
+                    <div class="footer-links-info footer-link-item">
                         <p>Information</p>
                         <ul class="footer-links-list">
                             <li><a href="#">Store locations</a></li>
@@ -13,7 +16,7 @@
                             <li><a href="#">About Ruti</a></li>
                         </ul>
                     </div>
-                    <div class="footer-links-customer">
+                    <div class="footer-links-customer footer-link-item">
                         <p>Customer service</p>
                         <ul class="footer-links-list">
                             <li><a href="#">Contact Us</a></li>
@@ -21,7 +24,7 @@
                             <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
-                    <div class="footer-links-account">
+                    <div class="footer-links-account footer-link-item">
                         <p>My account</p>
                         <ul class="footer-links-list">
                             <li><a href="#">Account Information</a></li>
@@ -30,7 +33,7 @@
                         </ul>
                     </div>
                 
-                    <div class="footer-email">
+                    <div class="footer-email footer-link-item">
                         <form action="">
                             <p>Subscribe to our newsletter and receive 10% off</p>
                             <input type="email" placeholder="email adress">
